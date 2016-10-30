@@ -17,10 +17,10 @@ app.controller('myCtrl', function($scope, $http) {
     
     //get data
     $scope.getData = function(){
-        $scope.show = false;
-        $scope.show1 = false;
-        $scope.show2 = false;
-        $scope.show3 = false;
+        $scope.show = false; // show alert about missing variables
+        $scope.show1 = false; // show alert about missing user in biblos db
+        $scope.show2 = false; // show alert about possible delay with delivery user info
+        $scope.show3 = false; // show detailed information about founded user
         if($scope.surname||$scope.name){
             $scope.show2 = true;
             $http({
@@ -39,7 +39,7 @@ app.controller('myCtrl', function($scope, $http) {
                 }                
             }, function(error){
                 console.log(error);
-                alert("Something gones wrong");
+                alert("Something gones wrong. Please refresh page");
             })
         }else{
             $scope.show = true;
