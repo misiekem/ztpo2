@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
 import re
-from app.const import *
+from Backend.app.const import *
 from unidecode import unidecode
 
 class GetUserPublications():
@@ -22,7 +22,7 @@ class GetUserPublications():
         self.pageNumbers = pageNumbers
 
     def startSession(self):
-        self.wd = webdriver.PhantomJS('libs/phantomjs.exe')
+        self.wd = webdriver.PhantomJS('app/libs/phantomjs.exe')
         self.wd.get(BASE_URL+PUB_NUM_URL+str(self.userId)+"&rel=BPP-author")
 
     def getSource(self, page):

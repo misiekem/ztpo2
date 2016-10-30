@@ -1,7 +1,7 @@
 import httplib2
 from bs4 import BeautifulSoup
 import re
-from app.const import *
+from Backend.app.const import *
 
 class GetNumberOfPublications():
     userId = ""
