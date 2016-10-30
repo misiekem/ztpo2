@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hello</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="style\style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="./mainController.js"></script>
+    </head>
+    
+    <body>
+        <div ng-app="myApp" ng-controller="myCtrl" ng-init="init()">
+            <div class="container">
+                <div class="jumbotron myJumbotron">
+                    <h1 align="center">Hello!</h1>
+                    <br>
+                    <h3 align="left">Connected to flask: {{connected}}</h3>
+                    <br>
+                    <div align="center">
+                        <h4>Nazwisko:
+                            <input ng-model="surname" type="text" class="input">
+                            Imie:  
+                            <input ng-model="name" type="text" class="input">
+                        </h4>
+                        <div ng-show="show==true">Musisz wpisac oba pola</div>
+                        <br>
+                        <button ng-click="getData()" class="btn myBtn">Get data</button> <br><br>
+                    </div>
+                    <div ng-show="show1==true" align="center">
+                        <br><h3>Nie odnaleziono takiego uzytkownika w suw.biblos.pk.edu.pl</h3>
+                        <h3>Spróbuj ponownie</h3><br>
+                    </div>
+                    <div ng-show="show2==true" align="center">
+                        <h4>Beta wersja, pobieranie danych moze chwile potrwac</h4>
+                        <h5>Ale na pewno się uda!!!</h5>
+                    </div>
+                    <div class="panel input" ng-show="show3==true">
+                        <div class="list-group-item input">
+                            <h3>ID Pracownika: {{dane.id}}</h3>
+                            <h3>Liczba publikacji: {{dane.pubNumber}}</h3>
+                            <h3>Suma punktów: {{dane.allPoints}}</h3>
+                        </div>
+                        <ul class="list-group">
+                            <li ng-repeat="i in pubs" class="list-group-item input">
+                                <h4><b>Tytuł: </b> {{i.title}}</h4>
+                                <h4><b>Typ: </b> {{i.type}}</h4>
+                                <h4><b>Forma: </b> {{i.form}}</h4>
+                                <h4><b>Data: </b> {{i.date}}</h4>
+                                <h4><b>Punkty MNiSW: </b> {{i.points}}</h4>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
