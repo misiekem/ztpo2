@@ -1,7 +1,6 @@
 import unittest
-import app
 from unittest import *
-from GetUserId import *
+from Backend.app.GetUserId import GetUserId
 
 
 class TestGetUserId(TestCase):
