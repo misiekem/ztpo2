@@ -1,5 +1,5 @@
 import unittest
-import Backend
+import Backend.app
 from unittest import *
 from Backend.app.GetUserId import GetUserId
 
@@ -10,6 +10,6 @@ class TestGetUserId(TestCase):
         self.assertEqual(x.getId("Krupa", "Krzysztof"), '926')
 
 
-if __name__ == '__main__':
+if __name__ == '__test__':
     suite = unittest.defaultTestLoader.loadTestsFromTestCase(TestGetUserId)
     unittest.TextTestRunner().run(suite)
