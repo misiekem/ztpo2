@@ -9,9 +9,9 @@ app.controller('myCtrl', function($scope, $http) {
             dataType: 'JSONP', 
             url: "http://localhost:5000/"
         }).then(function(data){
-            $scope.connected = "ALL DAY LONG KURWA";
+            $scope.connected = "Połączono";
         }, function(error){
-            $scope.connected = "Missing connection. Please refresh or restart flask server.";
+            $scope.connected = "Brak połączenia. Uruchom lub zrestartuj serwer Flask";
         });
     }
     

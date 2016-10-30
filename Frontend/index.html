@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Hello</title>
+        <title>MNiSW Points v1</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="style/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
@@ -13,9 +13,9 @@
         <div ng-app="myApp" ng-controller="myCtrl" ng-init="init()">
             <div class="container">
                 <div class="jumbotron myJumbotron">
-                    <h1 align="center">Hello!</h1>
+                    <h1 align="center">Kalkulator punktacji MNiSW</h1>
                     <br>
-                    <h3 align="left">Connected to flask: {{connected}}</h3>
+                    <h3 align="center">Status serwera flask: {{connected}}</h3>
                     <br>
                     <div align="center">
                         <h4>Nazwisko:
@@ -23,17 +23,17 @@
                             Imie:  
                             <input ng-model="name" type="text" class="input">
                         </h4>
-                        <div ng-show="show==true">Musisz wpisac oba pola</div>
+                        <div ng-show="show==true">Wypełnij oba pola</div>
                         <br>
-                        <button ng-click="getData()" class="btn myBtn">Get data</button> <br><br>
+                        <button ng-click="getData()" class="btn myBtn">Pobierz dane</button> <br><br>
                     </div>
                     <div ng-show="show1==true" align="center">
                         <br><h3>Nie odnaleziono takiego uzytkownika w suw.biblos.pk.edu.pl</h3>
                         <h3>Spróbuj ponownie</h3><br>
                     </div>
                     <div ng-show="show2==true" align="center">
-                        <h4>Beta wersja, pobieranie danych moze chwile potrwac</h4>
-                        <h5>Ale na pewno się uda!!!</h5>
+                        <h4>Wersja beta, pobieranie danych może chwilę potrwać</h4>
+                        <h5>Ale na pewno się uda! :)</h5>
                     </div>
                     <div class="panel input" ng-show="show3==true">
                         <div class="list-group-item input">
