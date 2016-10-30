@@ -1,11 +1,8 @@
 import unittest
-import Backend
-from unittest import *
-from Backend.app.GetUserId import GetUserId
+from app.GetUserId import GetUserId
 
-
-class TestGetUserId(TestCase):
-    def test_getId2(self):
+class TestGetUserId(unittest.TestCase):
+    def test_getId(self):
         x = GetUserId()
         self.assertEqual(x.getId("Krupa", "Krzysztof"), '926')
 

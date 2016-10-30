@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
 import re
-from Backend.app.const import *
+from app.const import *
 from unidecode import unidecode
 
 class GetUserPublications():
