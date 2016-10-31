@@ -1,2 +1,5 @@
 .idea/workspace.xml
 *.pyc
+*.xml
+Backend/app/__pycache__/GetUserInfo.cpython-35.pyc
+*.log

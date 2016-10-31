@@ -1,5 +1,5 @@
 from app.GetUserId import *
-from app.GetNumberOfPublications import *
+from app.GetNumberOfPubs import *
 from app.GetUserPublications import *
 from app.GetUserInfo import *
 from flask import Flask, request

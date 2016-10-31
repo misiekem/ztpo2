@@ -1,5 +1,5 @@
 from app.GetUserId import *
-from app.GetNumberOfPublications import *
+from app.GetNumberOfPubs import *
 from app.GetUserPublications import *
 import json
 
