@@ -36,8 +36,10 @@ class GetUserPublications():
         typeName = []
         publicationForm = []
         publicationDate = []
+        # finds table rows containing information about publications
         for a in self.source.find_all('td', style="border-bottom:#ddd 1px solid;"):
             rows.append(a.contents)
+        # iterate rows and appends correct data to specific list 
         for a in range(len(rows)):
             if a==0:
                 pass
@@ -60,6 +62,7 @@ class GetUserPublications():
                         publicationForm.append(unidecode(text[i+1]))
                         continue
                 titleMaxIndex = len(title)
+                # filling empty places in rows with None
                 while titleMaxIndex > len(publicationForm):
                     publicationForm.append("None")
                 while titleMaxIndex > len(publicationDate):
@@ -73,6 +76,7 @@ class GetUserPublications():
     def getAllPublications(self, userId, numbersOfPublications):
         self.addId(userId)
         self.addNumbersOfPublications(numbersOfPublications)
+        # if number of publications is not greater than 20 check only one url
         if self.numbersOfPublications <= 20:
             self.page = 0
             self.startSession()
@@ -80,13 +84,16 @@ class GetUserPublications():
             title, typeName, publicationForm, publicationDate, mniswPoints = self.getPublications()
             self.wd.close()
             return title, typeName, publicationForm, publicationDate, mniswPoints
+        # number of publications is more than 20  
         elif self.numbersOfPublications > 21:
             self.page = 0
             self.startSession()
             self.getSource(self.page)
+            # get first 20 records
             title, typeName, publicationForm, publicationDate, mniswPoints = self.getPublications()
             pages = self.numbersOfPublications/20
             pages = int(pages)
+            # go to next url's containing max 20 records each
             while pages>=1:
                 self.page += 20
                 self.getSource(self.page)

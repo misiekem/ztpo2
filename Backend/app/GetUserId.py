@@ -30,7 +30,7 @@ class GetUserId():
                 idUrl = a['href']
                 x = re.compile('\d+')
                 x = re.findall(x, idUrl)
-                return x[0]
+                return x[0] # value of user id
                 break
         
 

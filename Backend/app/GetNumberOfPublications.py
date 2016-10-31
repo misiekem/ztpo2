@@ -20,7 +20,7 @@ class GetNumberOfPublications():
         text = str(self.source.find_all('h4'))
         x = re.compile('\d+')
         pageNumbers = re.findall(x, text)
-        return pageNumbers[1]
+        return pageNumbers[1] # number of publications
 
     def getNumberOfPublications(self, userId):
         self.addId(userId)

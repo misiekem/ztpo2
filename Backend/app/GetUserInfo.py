@@ -16,10 +16,12 @@ class GetUserInfo():
         userInfoInstance = GetUserId()
         print("Get user id")
         userId = userInfoInstance.getId(self.surname, self.name)
+        # if user id is not found in biblos db return None
         if userId == None:
             data['id'] = 'None'
             json_data = json.dumps(data)
             return json_data
+        # else create from extracted data json file
         else:
             data['id'] = userId
             numberOfPubInstance = GetNumberOfPublications()
