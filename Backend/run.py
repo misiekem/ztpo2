@@ -22,7 +22,7 @@ def getUser():
         print("Get user finished")
         return data, {'Access-Control-Allow-Origin': '*'} 
     else:
-        return 'Something goes wrong', {'Access-Control-Allow-Origin': '*'} 
+        return 'Something went wrong', {'Access-Control-Allow-Origin': '*'}
 
     
     
